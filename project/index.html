@@ -3,65 +3,80 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 </head>
 
+<script>
+
+</script>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-md fixed-top bg-light">
-        <a class="navbar-brand" href="#">Hopsop</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Hopsop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Travel</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Shop</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pages</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-
-            </ul>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Travel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <main role="main">
         <div class="container">
-            <div class="description  text-center">
-                <h1 class="display-4">Shopping Products</h1>
-                <p>Voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+            <div class="bxslider">
+                <div><img src="img/632d61_4c22a330978f4b6ca21dd7c1b5d208f2_mv2_d_4080_2720_s_4_2.jpg"></div>
+                <div><img src="img/632d61_cd340fc425884b669dffe3e4932a3b92_mv2.jpg"></div>
+                <div><img src="img/path-4518094_1920.jpg"></div>
             </div>
         </div>
+        <div class="description  text-center">
+            <h1 class="display-4">Shopping Products</h1>
+            <p>Voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+            <hr>
+        </div>
+
+        <div id="calendarContainer"></div>
+        <div id="organizerContainer"></div>
+
         <div class="container">
             <div class="row">
                 <div class="card-deck">
                     <div class="col-md-4">
                         <div class="single-product">
                             <div class="single-product__img">
-                                <a href="#"><img src="img/p1.jpg"></a>
-                            </div>
-                            <div class="single-product__actions">
-                                <a data-toggle="modal" data-target="#product-window" class="view" href="#"></a>
+                                <img class="img-thumbnail" src="img/p1.jpg">
                             </div>
                         </div>
                         <div class="single-product__content">
-                            <h4><a href="#">Dorji bari East long Style</a></h4>
+                            <h4><a data-toggle="modal" data-target="#product-window" class="view" href="#"></a></h4>
                             <div class="single-product__price-cart">
                                 <div class="single-product__home-price">
                                     <span>$199.99</span>
@@ -69,17 +84,34 @@
                             </div>
                         </div>
                     </div>
+
+                    <div id="product-window" class="modal fade" tabindex=-1>
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="card">
+                                        <div class="card-body">Dorji bari East long Style</div>
+                                        <img class="card-img-bottom" src="img/p1.jpg">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-danger" data-dismiss="modal">Закрыть</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="col-md-4">
                         <div class="single-product">
                             <div class="single-product__img">
-                                <a href="#"><img src="img/p2.jpg"></a>
-                            </div>
-                            <div class="single-product__actions">
-                                <a data-toggle="modal" data-target="#product-window" class="view" href="#"></a>
+                                <img class="img-thumbnail" src="img/p2.jpg">
                             </div>
                         </div>
                         <div class="single-product__content">
-                            <h4><a href="#">Dorji bari East long Style</a></h4>
+                            <h4><a data-toggle="modal" data-target="#product-window2" class="view" href="#"></a></h4>
                             <div class="single-product__price-cart">
                                 <div class="single-product__home-price">
                                     <span>$200.99</span>
@@ -87,17 +119,34 @@
                             </div>
                         </div>
                     </div>
+
+                    <div id="product-window2" class="modal fade" tabindex=-1>
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="card">
+                                        <div class="card-body">Dorji bari East long Style</div>
+                                        <img class="card-img-bottom" src="img/p2.jpg">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-danger" data-dismiss="modal">Закрыть</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="col-md-4">
                         <div class="single-product">
                             <div class="single-product__img">
-                                <a href="#"><img src="img/p3.jpg"></a>
-                            </div>
-                            <div class="single-product__actions">
-                                <a data-toggle="modal" data-target="#product-window" class="view" href="#"></a>
+                                <img class="img-thumbnail" src="img/p3.jpg">
                             </div>
                         </div>
                         <div class="single-product__content">
-                            <h4><a href="#">Dorji bari East long Style</a></h4>
+                            <h4><a data-toggle="modal" data-target="#product-window3" class="view" href="#"></a></h4>
                             <div class="single-product__price-cart">
                                 <div class="single-product__home-price">
                                     <span>$100.80</span>
@@ -105,17 +154,34 @@
                             </div>
                         </div>
                     </div>
+
+                    <div id="product-window3" class="modal fade" tabindex=-1>
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="card">
+                                        <div class="card-body">Dorji bari East long Style</div>
+                                        <img class="card-img-bottom" src="img/p3.jpg">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-danger" data-dismiss="modal">Закрыть</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="col-md-4">
                         <div class="single-product">
                             <div class="single-product__img">
-                                <a href="#"><img src="img/p4.jpg"></a>
-                            </div>
-                            <div class="single-product__actions">
-                                <a data-toggle="modal" data-target="#product-window" class="view" href="#"></a>
+                                <img class="img-thumbnail" src="img/p4.jpg">
                             </div>
                         </div>
                         <div class="single-product__content">
-                            <h4><a href="#">Dorji bari East long Style</a></h4>
+                            <h4><a data-toggle="modal" data-target="#product-window4" class="view" href="#"></a></h4>
                             <div class="single-product__price-cart">
                                 <div class="single-product__home-price">
                                     <span>$200.99</span>
@@ -123,9 +189,33 @@
                             </div>
                         </div>
                     </div>
+
+                    <div id="product-window4" class="modal fade" tabindex=-1>
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="card">
+                                        <div class="card-body">Dorji bari East long Style</div>
+                                        <img class="card-img-bottom" src="img/p4.jpg">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-danger" data-dismiss="modal">Закрыть</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </main>
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
 
 </body></html>
